@@ -1,4 +1,4 @@
-import './ExpenseDate.css'
+import '../Expenses/ExpenseDate.css'
 //購入の日のレンダリングする。
 function ExpenseDate(props){
  const month = props.date.toLocaleString('en-US', { month: 'long' });
