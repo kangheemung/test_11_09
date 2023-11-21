@@ -5,6 +5,7 @@ import '../Expenses/ExpenseItem.css';
 import Card from '../UI/Card';
 function ExpenseItem(props) {
     const[title,setTitle]= useState(props.title);
+    console.log('ExpenseItem evaluated by React')
     
     //削除可能になる。
 // const expenseDate = new Date(2021, 2, 28);
@@ -15,7 +16,8 @@ function ExpenseItem(props) {
  //const day = props.date.toLocaleString('en-US', { day: '2-digit' });
  //const year = props.date.getFullYear();
  const clickHandler = () => {
-  setTitle('update!');
+  setTitle('updated!');
+  title = 
       console.log(title);
  };
     return(
