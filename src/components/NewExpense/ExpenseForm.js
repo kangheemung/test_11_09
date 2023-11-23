@@ -2,18 +2,57 @@ import React, { useState } from 'react';
 import './ExpenseForm.css';
 const ExpenseForm = () => {
     const[enteredTitle, setEnteredTitle] = useState('');
-    const[enteredAmount, setEnteredAmount]=useState('');
-    const[enteredDate, setEnteredDate]=useState('');
+    const[enteredAmount, setEnteredAmount] = useState('');
+    const[enteredDate, setEnteredDate] = useState('');
     
+   // const [userInput,setUserInput] = useState({
+     //   enteredTitle:'',
+       // enteredAmount:'',
+    //    enteredDate:''
+    //});
     const titleChangeHandler = (event) => {
         setEnteredTitle(event.target.value);//書いた値をセーブする
+       //===================
+       //setUserInput({
+         //  ...userInput,//すべてのキーとvalueを新しい個体に追加する
+         // enteredTitle: event.target.value,
+      // })<=updateに考慮しないと行けない問題が多い
+      //=======================----
+      //setUserInput((prevState) => {
+        //  return {//以前状態からキーとvalueをコピーしevent.target.valueでオーバーナイトします。
+          //こっちがもっと安全な書き方です。アップデートに使う書き方
+          //以前状態でstateをアップデートするときこれを使いましょう
+          
+         // ...prevState,enteredTitle: event.target.value};
+     // });
     };
+    
+    //色んな状態Stateはどう管理すればいい？
+    //何回でも呼べばい
+    //const[enteredDate, setEnteredDate]=useState('');みたいに
+    //例え数字でもevent.target.valueの場合その値は文字列になります。
+    
     const amountChageHandler = (event) => {
-         setEnteredAmount(event.target.value);
+        setEnteredAmount(event.target.value);
+        // setUserInput({
+        //  ...userInput,
+        //enteredAmount: event.target.value,
+        //setUserInput((prevState) => {
+          //  return{
+            //     ...prevState,enteredAmount: event.target.value};
+       //})
         
     };   
        const dayChageHandler = (event) => {
           setEnteredDate(event.target.value);
+           //setUserInput({
+           // ...userInput,   
+           // enteredDate: event.target.value,
+            //setUserInput((prevState) => {
+            //return{
+              //   ...prevState,enteredDate: event.target.value};
+   
+       })
         
     };  
 
