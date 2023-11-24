@@ -29,6 +29,10 @@ function App() {
     {id: 'e5',title:'bear' ,amount: 300.67, date: new Date(2023, 3, 18)},
     {id: 'e6',title:'bag' ,amount: 100.67, date: new Date(2024, 5, 28)}
     ];
+    const addExpenseHandler = expense => {
+    console.log('In App.js');
+    console.log(expense);
+  };
     return (//React.createElement(
      // 'div',
       //{},
@@ -37,7 +41,7 @@ function App() {
      // );
   //(
     <div className="App">
-        <NewExpense />
+        <NewExpense onAddExpense={addExpenseHandler}/>
         <Expenses items={expenses}/>
          <p>This is also visible!</p>
     </div>
