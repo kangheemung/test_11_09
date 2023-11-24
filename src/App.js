@@ -4,6 +4,9 @@ import React from 'react';
 import ExpenseItem from './components/Expenses/ExpenseItem';
 import Expenses from './components/Expenses/Expenses';
 import NewExpense from './components/NewExpense/NewExpense';
+
+
+
 function App() {
   const expenses =[
     {
@@ -42,6 +45,7 @@ function App() {
   //(
     <div className="App">
         <NewExpense onAddExpense={addExpenseHandler}/>
+    
         <Expenses items={expenses}/>
          <p>This is also visible!</p>
     </div>
