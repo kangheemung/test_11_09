@@ -1,11 +1,11 @@
-import React,{ useState }from 'react';
+import React from 'react';
 
 import ExpenseDate from '../Expenses/ExpenseDate';
 import '../Expenses/ExpenseItem.css';
 import Card from '../UI/Card';
-function ExpenseItem(props) {
-    const[title,setTitle]= useState(props.title);
-    console.log('ExpenseItem evaluated by React')
+const ExpenseItem = (props)　=> {
+    //const[title,setTitle]= useState(props.title);
+   // console.log('ExpenseItem evaluated by React')
     
     //削除可能になる。
 // const expenseDate = new Date(2021, 2, 28);
@@ -15,19 +15,18 @@ function ExpenseItem(props) {
  //const month = props.date.toLocaleString('en-US', { month: 'long' });
  //const day = props.date.toLocaleString('en-US', { day: '2-digit' });
  //const year = props.date.getFullYear();
- const clickHandler = () => {
-  setTitle('updated!');
-  title = 
-      console.log(title);
- };
+// const clickHandler = () => {
+//  setTitle('updated!');
+//  title = 
+   //   console.log(title);
+// };
     return(
       <Card className='expense-item'>
        <ExpenseDate date={props.date}/>
         <div className= " expense-item__description">
-          <h2>{title}</h2>
+          <h2>{props.title}</h2>
           <div className="expense-item__price">{props.amount}</div>
         </div>
-        <button onClick={clickHandler}>Chage Title</button>
       </Card>
     );
 
